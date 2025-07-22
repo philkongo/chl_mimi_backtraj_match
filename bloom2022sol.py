@@ -21,7 +21,7 @@ for sheet_number in range(1, 101):
     sheet_name = f'{sheet_number}'
 
     # Load the DataFrame from the current sheet
-    collated_bloom = pd.read_excel("/home1/kyeongpi/P2/data/bloom2022/bloom2022_combined.xlsx",
+    collated_bloom = pd.read_excel('your filepath here',
                                    sheet_name=sheet_name)
 
     # Parameterizing chl files
@@ -93,7 +93,7 @@ for sheet_number in range(1, 101):
 
     if merged_dfs:
         final_merged_df = pd.concat(merged_dfs, ignore_index=True)
-        csv_output_path = f"/home1/kyeongpi/P2/output/2022_bloom_sol/2022_bloomsol{sheet_name}.csv"
+        csv_output_path = f"your file outpath here"
         final_merged_df.to_csv(csv_output_path, index=False)
         print(f"Final Merged DataFrame saved to: {csv_output_path}")
     else:
